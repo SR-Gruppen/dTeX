@@ -7,6 +7,16 @@ Kräver xelatex, latexmk mm för att kunna köras
 
     make install
 
+### Overleaf
+Vill du komma igång snabbt kan det vara lättast att använda Overleaf. Det viktigaste är att ändra kompilator till XeLaTeX.
+
+**För motioner:**
+1. Ladda ned /templates/motion.zip. 
+2. Skapa ett nytt projekt i Overleaf med zip-filen.
+3. Välj meny uppe till vänster, gå till inställningar och ändra kompilator till XeLaTeX
+4. Kompilera som vanligt i Overleaf
+
+
 ## `dtek` class
 
 Inkluderar sektionens logotyp, `\title` och `\date` i sidhuvudet.
