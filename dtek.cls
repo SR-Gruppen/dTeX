@@ -215,5 +215,13 @@
   \llap{\textcolor{lightgray}{\the\numexpr\value{stycke}+1\relax\,st.\quad}}%
 }
 
+\DeclareDocumentCommand \makesign {m} {%
+  \parbox{0.47\textwidth}{%
+    \vspace{2cm}
+    \rule{0.47\textwidth}{0.5pt}\\
+    #1
+  }
+}
+
 % --------------------------------------------------------------------
 \endinput
