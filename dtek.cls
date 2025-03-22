@@ -14,6 +14,7 @@
 \RequirePackage{parskip}      % or parfill if you like
 \RequirePackage{graphicx}
 \RequirePackage{fancyhdr}
+\RequirePackage{csquotes}
 \RequirePackage[unicode]{hyperref}
 \RequirePackage{lastpage}
 \RequirePackage{xparse}
