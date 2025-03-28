@@ -106,36 +106,8 @@
   \renewcommand{\footrulewidth}{1pt}
 
   \cfoot{\opensans \thepage~av~\pageref{LastPage}}
-
-  \ifincludeaddress
-    \lfoot{%
-      \opensans
-      \raggedright
-      Datateknologsektionen\\
-      Rännvägen 8\\
-      412\,58 Göteborg
-    }
-    \rfoot{%
-      \opensans
-      \raggedleft
-      \href{mailto:styret@dtek.se}{styret@dtek.se}\\
-      \href{http://dtek.se}{www.dtek.se}
-    }
-  \fi
 }
 
-% Provide an alias for the old name (backwards compatibility):
-\DeclareDocumentCommand \makeheadfoot {}{\makehf}
-
-\RequirePackage{titlesec}
-
-
-% 7B. Section layout
-\titleformat{\section}[block]
-  {\centering\Large\bfseries}
-  {\thesection\ kap.}
-  {1em}
-  {\MakeUppercase}
 
 \DeclareDocumentCommand \makesign {m} {%
   \parbox{0.47\textwidth}{%

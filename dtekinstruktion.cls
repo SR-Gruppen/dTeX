@@ -1,17 +1,17 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{dtek}[2025/03/10 Modernized Datateknologsektionen document class]
+\ProvidesClass{dtekinstruktion}[2025/03/28 Instruktionsklass för DNollK]
 
 % --------------------------------------------------------------------
-%  1. Load article base class, at 11pt
+%  1. Ladda article-klassen med 11pt
 % --------------------------------------------------------------------
 \LoadClass[11pt]{article}
 
 % --------------------------------------------------------------------
-%  2. Standard packages
+%  2. Standardpaket
 % --------------------------------------------------------------------
 \RequirePackage[swedish]{babel}
-\RequirePackage{fontspec}     % For TTF/OTF fonts (needs xelatex)
-\RequirePackage{parskip}      % or parfill if you like
+\RequirePackage{fontspec}     % För TTF/OTF-fonter (kräver xelatex)
+\RequirePackage{parskip}      % Mellanrum mellan stycken
 \RequirePackage{graphicx}
 \RequirePackage{fancyhdr}
 \RequirePackage{csquotes}
@@ -22,24 +22,20 @@
 \RequirePackage[includeheadfoot,
   top=1.0cm, bottom=3.5cm, left=2.5cm, right=2.5cm]{geometry}
 
-% If you want color macros (for \textcolor{gray}, etc.):
 \RequirePackage{xcolor}
 
 % --------------------------------------------------------------------
-%  3. Font setup: PT Serif main, Open Sans for headings
+%  3. Typsnitt: PT Serif för löptext, Open Sans för rubriker
 % --------------------------------------------------------------------
 \defaultfontfeatures{Ligatures=TeX}
-
 \setmainfont{PT Serif}
-
 \newfontfamily\opensans{Open Sans}
 
-% Make sections in bold Open Sans:
 \RequirePackage{sectsty}
 \allsectionsfont{\opensans\bfseries}
 
 % --------------------------------------------------------------------
-%  4. Hyperref
+%  4. Hyperref-inställningar
 % --------------------------------------------------------------------
 \AtBeginDocument{%
   \hypersetup{
@@ -55,7 +51,7 @@
 }
 
 % --------------------------------------------------------------------
-%  5. Subtitle command
+%  5. Underrubrik kommando
 % --------------------------------------------------------------------
 \DeclareDocumentCommand \subtitle {m} {%
   \DeclareDocumentCommand \@subtitle {}{#1}%
@@ -67,7 +63,7 @@
 }
 
 % --------------------------------------------------------------------
-%  6. Fancyhdr for header/footers
+%  6. Fancyhdr för sidhuvud/sidfötter
 % --------------------------------------------------------------------
 \newif\ifincludeaddress
 \includeaddressfalse
@@ -79,8 +75,8 @@
   \setlength{\headheight}{25mm}
   \setlength{\headsep}{15mm}
   \fancyhf{}
-
-  % Top-left content
+  
+  % Vänster sidhuvud
   \newcommand{\headleft}{%
     \opensans
     \hspace{-2em}
@@ -91,22 +87,22 @@
       Chalmers Studentkår
     }
   }
-
-  % Top-right content
+  
+  % Höger sidhuvud
   \newcommand{\headright}{%
     \opensans
     \@title\\
     \@date
   }
-
+  
   \lhead{\headleft}
   \rhead{\headright}
-
+  
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{1pt}
-
+  
   \cfoot{\opensans \thepage~av~\pageref{LastPage}}
-
+  
   \ifincludeaddress
     \lfoot{%
       \opensans
@@ -124,16 +120,12 @@
   \fi
 }
 
-% Provide an alias for the old name (backwards compatibility):
 \DeclareDocumentCommand \makeheadfoot {}{\makehf}
 
 \RequirePackage{titlesec}
-
-
-% 7B. Section layout
 \titleformat{\section}[block]
   {\centering\Large\bfseries}
-  {\thesection\ kap.}
+  {\thesection.}
   {1em}
   {\MakeUppercase}
 
@@ -145,5 +137,4 @@
   }
 }
 
-% --------------------------------------------------------------------
 \endinput
