@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{dtek}[2025/03/10 Modernized Datateknologsektionen document class]
+\ProvidesClass{dtekmotion}[2025/03/10 Modernized Datateknologsektionen document class]
 
 % --------------------------------------------------------------------
 %  1. Load article base class, at 11pt
